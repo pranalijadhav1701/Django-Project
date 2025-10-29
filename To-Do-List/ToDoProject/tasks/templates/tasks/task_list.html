@@ -1,0 +1,21 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+<form id="taskForm" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Task</button>
+</form>
+
+<ul id="taskList">
+    {% for task in tasks %}
+    <li data-id="{{ task.id }}" class="{% if task.completed %}completed{% endif %}">
+        <span class="title">{{ task.title }}</span>
+        <button class="toggle">✔</button>
+        <button class="delete">🗑</button>
+    </li>
+    {% empty %}
+    <li>No tasks yet!</li>
+    {% endfor %}
+</ul>
+{% endblock %}
