@@ -1,0 +1,10 @@
+{% extends 'students/base.html' %}
+{% block content %}
+<h3>Student Result</h3>
+<ul class="list-group">
+  <li class="list-group-item"><strong>Name:</strong> {{ student.name }}</li>
+  <li class="list-group-item"><strong>Roll Number:</strong> {{ student.roll_number }}</li>
+  <li class="list-group-item"><strong>Course:</strong> {{ student.course }}</li>
+  <li class="list-group-item"><strong>Marks:</strong> {{ student.marks|default:"Not entered" }}</li>
+</ul>
+{% endblock %}
