@@ -21,3 +21,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('students.urls')),
 ]
+
+
+
+# admin credentials:
+# admin
+# admin123
